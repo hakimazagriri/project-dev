@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits Cosmétiques</title>
+    <!-- Liens vers Bootstrap CSS et CSS personnalisé -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Styles CSS personnalisés */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .product-card {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .img1{
+            height: 200px;
+            width:500px;
+        }
+        .reduced-image {
+        max-width: 50%; 
+        height: 50%; 
+       }
+       .hakima{ 
+        border-radius: 100px;
+       }
+       .text-left{
+        text-align: left;
+       }
+     
+       
+       
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="https://cosmeticsleal.com/wp-content/uploads/2021/12/cropped-Untitled-design-6.png" alt="Logo de votre marque" class="img1"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="all-products-link"  data-products='[
+                    {"imgSrc": "https://cosmeticsleal.com/wp-content/uploads/2022/12/20221214213327_IMG_86771-300x300.jpg", "title": "Crème Leal", "price": 250 , "rating": 4},
+                    {"imgSrc": "https://cosmeticsleal.com/wp-content/uploads/2023/08/solaire1-1229x1536.jpg", "title": "Écran Solaire Leal Cosmetics SPF 50+", "price": 180, "rating": 5},
+                    {"imgSrc": "https://cosmeticsleal.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-17-at-16.50.01-4.jpeg", "title": "Savon/masque Leal", "price": 180, "rating": 3},
+                    {"imgSrc": "https://cosmeticsleal.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-17-at-16.50.01.jpeg", "title": "Sèrum Leal", "price": 280, "rating": 5}
+                ]'>All Products</a>
+                </li>
+                
+                
+                <script>
+                    var allProductsLink = document.getElementById("all-products-link");
+                
+                    allProductsLink.addEventListener("click", function(event) {
+                        event.preventDefault();
+                
+                        var products = JSON.parse(allProductsLink.getAttribute("data-products"));
+                
+                        var productWindow = window.open("", "_blank");
+                        productWindow.document.write("<h1>All Products</h1>");
+                        productWindow.document.write('<div style="display: flex; flex-direction: row;">');
+                            for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            productWindow.document.write(`<div style="margin-right: 20px; text-align: center;">
+                <img src="${product.imgSrc}" alt="${product.title}" style="width: 300px; height: 300px;" />
+                <h2>${product.title}</h2>
+                <p>Prix: ${product.price} DH</p>
+                ${generateStarRating(product.rating)}
+            </div>`);
+        }
+        productWindow.document.write('</div>');
+    });
+
+    function generateStarRating(rating) {
+        var starsHtml = '<p>Évaluation: ';
+        for (var i = 1; i <= 5; i++) {
+            if (i <= rating) {
+                starsHtml += '★'; // étoile pleine
+            } else {
+                starsHtml += '☆'; // étoile vide
+            } 
+        }
+        starsHtml += '</p>';
+        return starsHtml;
+    }
+</script>   
+                
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Lancer Votre Commande</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container my-4 text-center">
+        <img src="https://cosmeticsleal.com/wp-content/uploads/2022/08/leal-cosmetics.png" alt="Leal Cosmetics" class="img-fluid" style="width: 100%; height: 50%;  border: 2px solid black;">
+    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+    </div>
+    <div class="container my-4 text-center">
+        <img src="https://cosmeticsleal.com/wp-content/uploads/2022/10/Livraison-Gratuite-6.png" alt="Livraison Gratuite" class="img-fluid mb-3">
+    </div>
+    
+    <div class="container my-4">
+        <div class="row">
+            <div class="col text-center">
+            <h2 class="border p-2"><b>Anti-Acné</b></h2>
+            <img src=https://cosmeticsleal.com/wp-content/uploads/2022/02/1.png  class="img-fluid mt-3">
+        </div>
+    
+        <!-- Deuxième image avec titre -->
+        <div class="col text-center">
+            <h2 class="border p-2"><b>Anti-Tâche</b></h2>
+            <img src=https://cosmeticsleal.com/wp-content/uploads/2022/02/2.png class="img-fluid mt-3">
+        </div>
+    
+        <!-- Troisième image avec titre -->
+        <div class="col text-center">
+            <h2 class="border p-2"><b>Eclairssissant</b></h2>
+            <img src=https://cosmeticsleal.com/wp-content/uploads/2022/02/3.png class="img-fluid mt-3">
+        </div>
+    </div>
+    <br>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col text-center">
+                <nav style="background-color: beige; width: 80vw;" class="text-dark py-3" >
+                    <h1 style="font-weight: bold;">Notre coffret visage</h1>
+                </nav>
+        </div>
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Nouvelle photo à gauche -->
+                    <img src="https://cosmeticsleal.com/wp-content/uploads/2023/08/groupe-819x1024.jpg" alt="Description de la nouvelle photo" class="img-fluid"  style="width: 100%; height: 100%;  border: 2px solid black;">
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <h1>Leal Cosmetics Bundle</h1>
+                        <p>Pour la première fois au Maroc, Leal a l’exclusivité de produire une gamme avec des ingrédients purs et rares, il s'agit de l'extrait des 7 fleurs rares et le lait de chèvre donnant naissance à une gamme innovante, unique et efficace.
+                            <br><br>
+
+                            A 638 DH</p>
+                            
+
+                            <button type="button" class="btn btn-warning rounded-pill" data-bs-toggle="modal" data-bs-target="#commandModal">Commander Maintenant</button>
+                            
+</div>
+    </div>
+</div>
+</div>
+ </div>
+ </div>
+  <div class="container my-4">
+                <div class="row">
+                    <div class="col text-center">
+                        <nav style="background-color: beige; width: 80vw;" class="text-dark py-3" >
+                            <h1 style="font-weight: bold;">NOUVEAUTÉ</h1>
+                        </nav>
+                </div>
+                <div class="container my-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Nouvelle photo à gauche -->
+                            <img src="https://cosmeticsleal.com/wp-content/uploads/2023/08/solaire1-1229x1536.jpg" alt="Description de la nouvelle photo" class="img-fluid"  style="width: 100%; height: 80%;  border: 2px solid orange;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                           <h1>Ecran Solaire SPF+5</h1>  
+                           <p>L’écran solaire Leal Cosmetics SPF 50+ est un produit hautement performant conçu pour offrir une protection solaire exceptionnelle tout en prenant soin de votre peau.
+                            Formulé par les experts de Leal Cosmetics, ce produit est conçu pour répondre aux besoins de ceux qui cherchent à profiter du soleil tout en préservant la santé et la beauté de leur peau.
+                            
+                            </p> 
+                            <button type="button" class="btn btn-warning rounded-pill" data-bs-toggle="modal" data-bs-target="#commandModal">Commander Maintenant</button>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                 </div>
+                 </div>
+
+
+            
+            
+                 <div class="container my-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <nav style="background-color: beige; width: 80vw;" class="text-dark py-3" >
+                                <h1 style="font-weight: bold;">Nos Produits</h1>
+                            </nav><br><br>
+                    </div>
+    
+    
+    
+   
+    
+    <div class="col-md-4">
+        <h1><b>Savon-Masque</b></h1>
+        <div >
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2022/12/20221225162823_IMG_8888.jpg"  class="img-fluid" style=" border: 2px solid  orange;">
+            
+
+          </div>  
+          <br>
+            
+            <!-- Bouton "En savoir plus" avec un lien pour ouvrir un nouvel onglet -->
+            <a href="javascript:void(0);"  onclick="openProductDetails()"  class="btn btn-warning  hakima">En savoir plus</a>
+        
+    </div>
+   
+
+  
+   
+
+    <script>
+        function openProductDetails() {
+    var imageUrl = "https://cosmeticsleal.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-17-at-16.50.01-4.jpeg";
+    var productDescription = "<i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i></p> <h2>د.م.108.00</h2><p class='gray-text'><span class='gray-text'>Notre Secret Précieux est un savon-masque Bio, à base <br> d’ingrédients naturels dont l’extrait de 7 fleurs rares et le<br> lait de chèvre, hautement qualifié et performant conçu<br> pour être utilisé sur le visage et le corps. </span> <br>" 
+    + "<ul class='gray-text'>"
+    + "<li>Soin Spécial</li>"
+    + "<li>Traitement profond de la peau</li>"
+    + "<li>Antimycosique, anti tache et acné</li>"
+    + "</ul><br>"
+    + "<p class='gray-text'>Utiliser quotidiennement ce savon pour un résultat efficace.</p><br><br>"
+    
+        +"<h2>Détails:</h2>"
+        +"<p>Savon au lait de chèvre et l’extrait de 7 fleurs rares, hautement qualifié et efficace pour le visage et le corps. Il a été spécifiquement développé pour traiter l’ensemble des imperfections de votre peau. Ce savon permet de réguler la production de sébum des peaux mixtes, de débarrasser la peau de ses impuretés, de désincruster les pores en douceur et d’estomper le grain de la peau. Grâce à sa mousse purifiante, notre savon se transforme en un véritable masque facial.</p><BR><br>"
+        
+       + "<h2>Composants:</h2>"
+       +" <ul>"
+           + "<li>Lait de chèvre</li>"
+           + "<li>L’extrait de 7 fleurs rares extrait de Veronica Americana, extrait de mauve, extrait de Primulavulais… </li>"
+           + "<li>L’huile de grain de ricin</li>"
+           + "<li>L’huile d’argan</li>"
+           +" <li>Beurre de karité</li>"
+            +"<li>Glycérine</li>"
+        +"<li>Huile de Coco</li>"
+            +"<li>Huile de soja</li><br><br>"
+       + "</ul>"
+       + "<h2>Mode d’utilisation:</h2>"
+        +"<p>Hydratez le savon de façon continue entre vos mains jusqu’à ce qu’une belle mousse se forme. Appliquer sur le visage, en évitant les yeux, sur le cou. La délicate mousse de savon se transformera en un masque crémeux, blanc et onctueux."
+       +" N’utilisez le savon en tant que masque que deux fois par semaine ; les autres jours, contentez-vous d’utiliser ce produit le matin et le soir pour laver votre visage. En cas de contact avec les yeux, rincez immédiatement avec de l’eau."
+    +" Ce soin est adapté à tous les types de peau.</p><BR><BR>"
+    +"<H1>Lancez Votre Commande:</H1>";
+   
+                                
+    var productWindow = window.open("", "_blank");
+
+    var content = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Produit</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+                <style>
+                    .gray-text {
+                        color: gray;
+                    }
+                    .form-container {
+                        text-align: left;
+                        margin-left: 20px; 
+                    }
+                  
+                   
+                </style>
+            </head>
+           
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Mettez ici vos balises meta et de lien vers les styles CSS et autres ressources -->
+</head>
+
+<body> 
+    <div class="container mt-5">
+        <div class="product-container">
+            <img src="${imageUrl}" alt="Produit" class="img-fluid" style="width: 400px; height: 400px;">
+            <div class="col-md-6">
+                <div class="product-description">
+                    <h1>Savon/masque Leal</h1>
+                    <p>${productDescription}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Formulaire de commande -->
+        <div class="form-container">
+            <form id="order-form">
+                <div class="form-group">
+                    <label  for="first-name" ><b>Prénom:</b></label>
+                    <input type="text" class="form-control" id="first-name" name="first-name"  style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name"><b>Nom:</b></label>
+                    <input type="text" class="form-control" id="last-name" name="last-name" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><b>Adresse:</b></label>
+                    <input type="text" class="form-control" id="address" name="address" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><b>Téléphone:</b></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" style="width: 500px; height: 50px;" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Annuler</button>
+            <button type="button"  class="btn btn-warning" onclick="submitPurchaseForm()cid="confirmation-message" >Confirmer l'achat</button>
+            
+        </div>
+        <div class="modal" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalLabel" aria-hidden="true">
+        
+        <button type="button" class="btn btn-warning" onclick="submitPurchaseForm()">Confirmer l'achat</button>
+    </div>
+
+    </div>
+    
+    
+</body>
+
+</html>
+
+        `;
+
+        productWindow.document.open();
+        productWindow.document.write(content);
+        productWindow.document.close();
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+    confirmButton.addEventListener("click", function() {
+        // Appeler la fonction confirmOrder() lors du clic sur le bouton
+        confirmOrder(productWindow);
+    });
+
+        // Ajouter un gestionnaire d'événements pour le formulaire de commande
+        productWindow.document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Vous pouvez récupérer les valeurs du formulaire ici et effectuer le traitement nécessaire.
+            // Par exemple, vous pouvez les envoyer à un serveur via une requête AJAX.
+        });
+       
+    }
+    
+    
+    function confirmOrder(productWindow) {
+    // Récupérer les valeurs des champs du formulaire
+    var firstName = document.getElementById("first-name").value;
+    var lastName = document.getElementById("last-name").value;
+    var address = document.getElementById("address").value;
+    var phone = document.getElementById("phone").value;
+
+    // Vérifier si tous les champs sont remplis
+    if (firstName && lastName && address && phone) {
+        // Afficher le message de confirmation dans la fenêtre du produit
+        productWindow.alert("Votre commande a été confirmée avec succès!");
+    } else {
+        // Afficher un message d'erreur dans la fenêtre du produit si tous les champs ne sont pas remplis
+        productWindow.alert("Veuillez remplir tous les champs du formulaire avant de confirmer la commande.");
+    }
+}
+
+
+
+
+    
+
+
+
+
+ 
+
+    </script>
+     <div class="col-md-4">
+        <h1><b>Sérum</b></h1>
+        <div >
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2022/12/20221225144721_IMG_8859.jpg" class="img-fluid" style=" border: 2px solid  orange;">
+            
+
+          </div>  
+          <br>
+            
+            <!-- Bouton "En savoir plus" avec un lien pour ouvrir un nouvel onglet -->
+            <a href="javascript:void(0);"  onclick="openProductDetails()"  class="btn btn-warning  hakima">En savoir plus</a>
+        
+    </div>
+    <script>
+        function openProductDetails() {
+    var imageUrl = "https://cosmeticsleal.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-17-at-16.50.01-4.jpeg";
+    var productDescription = "<i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i></p> <h2>د.م.250.00</h2><p class='gray-text'><span class='gray-text'>La Crème précieuse Leal est une crème visage à la texture fine. Non grasse, riche en lait de chèvre et extraits naturels de fleurs rares et pure avec une composition diverse des huiles essentielles, elle est idéale pour tous types de peau. </span> <br>" 
+    + "<ul class='gray-text'>"
+    + "<li>Crème hydratante</li>"
+    + "<li>Anti imperfections</li>"
+    + "</ul><br>"
+    + "<p class='gray-text'>Utiliser quotidiennement ce savon pour un résultat efficace.</p><br><br>"
+    
+        +"<h2>Détails:</h2>"
+        +"<p>La Crème Leal est à la base du Lait de Chèvre et Extrait de 7 fleurs rares, c’est une crème :</p><br>"
+        + "<ul>"
+        +"<li>100% naturelle et Bio</li>"
+        + "<li>déal pour le traitement des problèmes de peau.</li>"
+        + "<li>Hydratante, anti imperfections.</li>"
+        +"</ul><br><br><br>"
+
+        
+       + "<h2>Composants:</h2>"
+       +" <ul>"
+           + "<li>Lait de chèvre</li>"
+           + "<li>L’extrait de 7 fleurs rares extrait de Veronica Americana, extrait de mauve, extrait de Primulavulais… </li>"
+           + "<li>Vitamine E</li>"
+           + "<li>L’huile d’argan</li>"
+           +" <li>Beurre de karité</li>"
+            +"<li>Jus de feuilles d’aloe verra</li>"
+        +"<li>Huile de Coco</li>"
+            +"<li>L’huile d’amende douce</li><br><br>"
+       + "</ul>"
+       + "<h2>Mode d’utilisation:</h2>"
+        +"<p>Appliquer la crème hydratante juste après l’utilisation du savon sur l’ensemble de votre visage, jusqu’a absorption complète, le matin et le soir."
++"يطبق كريم ليال مباشرة بعد غسل الوجه ب صابون ليال , مع التدليك بحركات دائرية لتعزيز الدورة الدموية و امتصاص المنتج جيدا في الصباح و المساء."
+
++"À utiliser de préférence avec notre sérum précieux, savon-masque au lait de chèvre de la gamme Leal Cosmetics pour obtenir de meilleurs résultats.<br><br>"
+      
+    +"<H1>Lancez Votre Commande:</H1>";
+   
+                                
+    var productWindow = window.open("", "_blank");
+
+    var content = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Produit</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+                <style>
+                    .gray-text {
+                        color: gray;
+                    }
+                    .form-container {
+                        text-align: left;
+                        margin-left: 20px; 
+                    }
+                  
+                   
+                </style>
+            </head>
+           
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Mettez ici vos balises meta et de lien vers les styles CSS et autres ressources -->
+</head>
+
+<body> 
+    <div class="container mt-5">
+        <div class="product-container">
+            <img src="${imageUrl}" alt="Produit" class="img-fluid" style="width: 400px; height: 400px;">
+            <div class="col-md-6">
+                <div class="product-description">
+                    <h1>Savon/masque Leal</h1>
+                    <p>${productDescription}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Formulaire de commande -->
+        <div class="form-container">
+            <form id="order-form">
+                <div class="form-group">
+                    <label  for="first-name" ><b>Prénom:</b></label>
+                    <input type="text" class="form-control" id="first-name" name="first-name"  style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name"><b>Nom:</b></label>
+                    <input type="text" class="form-control" id="last-name" name="last-name" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><b>Adresse:</b></label>
+                    <input type="text" class="form-control" id="address" name="address" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><b>Téléphone:</b></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" style="width: 500px; height: 50px;" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Annuler</button>
+            <button type="button"  class="btn btn-warning" onclick="submitPurchaseForm()cid="confirmation-message" >Confirmer l'achat</button>
+            
+        </div>
+        <div class="modal" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalLabel" aria-hidden="true">
+        
+        <button type="button" class="btn btn-warning" onclick="submitPurchaseForm()">Confirmer l'achat</button>
+    </div>
+
+    </div>
+    
+    
+</body>
+
+</html>
+
+        `;
+
+        productWindow.document.open();
+        productWindow.document.write(content);
+        productWindow.document.close();
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+    confirmButton.addEventListener("click", function() {
+        // Appeler la fonction confirmOrder() lors du clic sur le bouton
+        confirmOrder(productWindow);
+    });
+    </script>
+    
+
+    
+    <div class="col-md-4">
+        <h1><b>Crème</b></h1>
+        <div >
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2022/12/20221214213327_IMG_86771.jpg"  class="img-fluid" style=" border: 2px solid  orange;">
+            
+
+          </div>  
+          <br>
+            
+            <!-- Bouton "En savoir plus" avec un lien pour ouvrir un nouvel onglet -->
+            <a href="javascript:void(0);"  onclick="openProductDetails()"  class="btn btn-warning  hakima">En savoir plus</a>
+        
+    </div>
+    <script>
+        function openProductDetails() {
+    var imageUrl = "https://cosmeticsleal.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-17-at-16.50.01-4.jpeg";
+    var productDescription = "<i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i><i class='fas fa-star text-warning'></i></p> <h2>د.م.108.00</h2><p class='gray-text'><span class='gray-text'>Notre Secret Précieux est un savon-masque Bio, à base <br> d’ingrédients naturels dont l’extrait de 7 fleurs rares et le<br> lait de chèvre, hautement qualifié et performant conçu<br> pour être utilisé sur le visage et le corps. </span> <br>" 
+    + "<ul class='gray-text'>"
+    + "<li>Soin Spécial</li>"
+    + "<li>Traitement profond de la peau</li>"
+    + "<li>Antimycosique, anti tache et acné</li>"
+    + "</ul><br>"
+    + "<p class='gray-text'>Utiliser quotidiennement ce savon pour un résultat efficace.</p><br><br>"
+    
+        +"<h2>Détails:</h2>"
+        +"<p>Savon au lait de chèvre et l’extrait de 7 fleurs rares, hautement qualifié et efficace pour le visage et le corps. Il a été spécifiquement développé pour traiter l’ensemble des imperfections de votre peau. Ce savon permet de réguler la production de sébum des peaux mixtes, de débarrasser la peau de ses impuretés, de désincruster les pores en douceur et d’estomper le grain de la peau. Grâce à sa mousse purifiante, notre savon se transforme en un véritable masque facial.</p><BR><br>"
+        
+       + "<h2>Composants:</h2>"
+       +" <ul>"
+           + "<li>Lait de chèvre</li>"
+           + "<li>L’extrait de 7 fleurs rares extrait de Veronica Americana, extrait de mauve, extrait de Primulavulais… </li>"
+           + "<li>L’huile de grain de ricin</li>"
+           + "<li>L’huile d’argan</li>"
+           +" <li>Beurre de karité</li>"
+            +"<li>Glycérine</li>"
+        +"<li>Huile de Coco</li>"
+            +"<li>Huile de soja</li><br><br>"
+       + "</ul>"
+       + "<h2>Mode d’utilisation:</h2>"
+        +"<p>Hydratez le savon de façon continue entre vos mains jusqu’à ce qu’une belle mousse se forme. Appliquer sur le visage, en évitant les yeux, sur le cou. La délicate mousse de savon se transformera en un masque crémeux, blanc et onctueux."
+       +" N’utilisez le savon en tant que masque que deux fois par semaine ; les autres jours, contentez-vous d’utiliser ce produit le matin et le soir pour laver votre visage. En cas de contact avec les yeux, rincez immédiatement avec de l’eau."
+    +" Ce soin est adapté à tous les types de peau.</p><BR><BR>"
+    +"<H1>Lancez Votre Commande:</H1>";
+   
+                                
+    var productWindow = window.open("", "_blank");
+
+    var content = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Produit</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+                <style>
+                    .gray-text {
+                        color: gray;
+                    }
+                    .form-container {
+                        text-align: left;
+                        margin-left: 20px; 
+                    }
+                  
+                   
+                </style>
+            </head>
+           
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Mettez ici vos balises meta et de lien vers les styles CSS et autres ressources -->
+</head>
+
+<body> 
+    <div class="container mt-5">
+        <div class="product-container">
+            <img src="${imageUrl}" alt="Produit" class="img-fluid" style="width: 400px; height: 400px;">
+            <div class="col-md-6">
+                <div class="product-description">
+                    <h1>Savon/masque Leal</h1>
+                    <p>${productDescription}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Formulaire de commande -->
+        <div class="form-container">
+            <form id="order-form">
+                <div class="form-group">
+                    <label  for="first-name" ><b>Prénom:</b></label>
+                    <input type="text" class="form-control" id="first-name" name="first-name"  style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name"><b>Nom:</b></label>
+                    <input type="text" class="form-control" id="last-name" name="last-name" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="address"><b>Adresse:</b></label>
+                    <input type="text" class="form-control" id="address" name="address" style="width: 500px; height: 50px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><b>Téléphone:</b></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" style="width: 500px; height: 50px;" required>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Annuler</button>
+            <button type="button"  class="btn btn-warning" onclick="submitPurchaseForm()cid="confirmation-message" >Confirmer l'achat</button>
+            
+        </div>
+        <div class="modal" id="commandModal" tabindex="-1" role="dialog" aria-labelledby="commandModalLabel" aria-hidden="true">
+        
+        <button type="button" class="btn btn-warning" onclick="submitPurchaseForm()">Confirmer l'achat</button>
+    </div>
+
+    </div>
+    
+    
+</body>
+
+</html>
+
+        `;
+
+        productWindow.document.open();
+        productWindow.document.write(content);
+        productWindow.document.close();
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+        var confirmButton = productWindow.document.getElementById("confirm-button");
+    confirmButton.addEventListener("click", function() {
+        // Appeler la fonction confirmOrder() lors du clic sur le bouton
+        confirmOrder(productWindow);
+    }); 
+   
+    </script>
+    
+   
+
+
+
+
+    <div class="container my-4">
+                    <div class="row">
+                        <div class="col text-center">
+                            <nav style="background-color: beige; width: 80vw;" class="text-dark py-3" >
+                                <h1 style="font-weight: bold;">Témoignages</h1>
+                            </nav>
+                    </div>
+
+
+
+
+
+
+                    <div class="container my-4">
+        <div class="row">
+            <div class="col text-center">
+            
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2021/12/Capture-decran-2021-12-19-153630-1.png"  class="img-fluid mt-3">
+        <div>Hajar 40 jours d'utilisation</div></div>
+    
+        <!-- Deuxième image avec titre -->
+        <div class="col text-center">
+            
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2021/12/Capture-decran-2021-12-19-154626.png" class="img-fluid mt-3">
+        <div>Hassna 25 jours d'utilisation</div></div>
+    
+        <!-- Troisième image avec titre -->
+        <div class="col text-center">
+            
+            <img src="https://cosmeticsleal.com/wp-content/uploads/2021/12/Capture-decran-2021-12-19-154352.png" class="img-fluid mt-3">
+       <div>Idrissia 56 jours d'utilisation</div> </div>
+    </div>
+
+    
+
+                
+    
+    
+    
+    
+    
+    
+
+  
+</body>
+</html>
+
+
+
+
+
+
